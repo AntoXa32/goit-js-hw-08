@@ -65,6 +65,7 @@ const images = [
 ];
 
 const galleryContainer = document.querySelector(".gallery");
+const galleryFragment = document.createDocumentFragment();
 
 images.forEach((image) => {
   const galleryItem = document.createElement("li");
@@ -82,8 +83,10 @@ images.forEach((image) => {
 
   galleryLink.appendChild(galleryImage);
   galleryItem.appendChild(galleryLink);
-  galleryContainer.appendChild(galleryItem);
+  galleryFragment.appendChild(galleryItem);
 });
+
+galleryContainer.appendChild(galleryFragment);
 
 galleryContainer.addEventListener("click", function (event) {
   event.preventDefault();
